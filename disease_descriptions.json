@@ -1,0 +1,27 @@
+{
+  "Atelectasis": [
+    "Partial lung collapse causing linear opacities in the lower lobes.",
+    "Volume loss with mediastinal shift and diaphragm elevation.",
+    "Crowding of pulmonary vessels with adjacent increased opacity."
+  ],
+  "Cardiomegaly": [
+    "Enlarged heart silhouette occupying more than half of thoracic width.",
+    "Prominent cardiac borders with widened mediastinum.",
+    "Globular-shaped heart shadow suggestive of chronic enlargement."
+  ],
+  "Consolidation": [
+    "Homogeneous dense opacity in the right lower lobe.",
+    "Air bronchograms within a patchy alveolar opacity.",
+    "Segmental consolidation with well-defined margins and no volume loss."
+  ],
+  "Edema": [
+    "Bilateral hazy opacities in the lower lung zones.",
+    "Perihilar bat-wing pattern indicating fluid overload.",
+    "Diffuse alveolar opacification consistent with pulmonary edema."
+  ],
+  "Pleural Effusion": [
+    "Blunting of costophrenic angle with meniscus sign.",
+    "Homogeneous opacity with fluid layering on lateral decubitus view.",
+    "Large left-sided effusion causing mediastinal shift."
+  ]
+}
