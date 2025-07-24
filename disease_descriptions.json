@@ -1,72 +1,72 @@
 {
   "Atelectasis": [
-    "Atelectasis refers to the partial collapse or incomplete expansion of lung tissue.",
-    "It typically appears as a linear or wedge-shaped opacity in the lower lung zones on chest X-rays.",
-    "This collapse leads to volume loss, which often causes the trachea and mediastinum to shift toward the affected side.",
-    "Bronchi and pulmonary vessels in the affected region become crowded due to lung shrinkage.",
-    "The ipsilateral diaphragm is elevated as a result of volume loss.",
-    "Interlobar fissures may be displaced and adjacent lobes often show compensatory overinflation.",
-    "Increased density is seen in the involved segment, but air bronchograms are usually absent because airways are obstructed.",
-    "These findings together help differentiate atelectasis from other causes of lung opacities."
+    "Atelectasis is the partial or complete collapse of lung tissue resulting in reduced or absent air volume in the affected region.",
+    "It typically manifests on chest X-rays as linear, wedge-shaped, or segmental opacities predominantly located in the lower lung zones.",
+    "The volume loss leads to mediastinal and tracheal shift toward the affected side, elevation of the ipsilateral hemidiaphragm, and crowding of bronchi and pulmonary vessels.",
+    "Interlobar fissures may be displaced, and adjacent lobes often show compensatory overinflation.",
+    "Absence of air bronchograms is typical due to airway obstruction.",
+    "Clinical correlation is essential as atelectasis can arise from airway obstruction, compression, or postoperative changes and may predispose to infection or respiratory compromise.",
+    "Radiographic features help differentiate atelectasis from other causes of lung opacities such as pneumonia or mass lesions.",
+    "Timely diagnosis is critical for effective treatment and prevention of complications."
   ],
   "Cardiomegaly": [
-    "Cardiomegaly is characterized by an enlarged cardiac silhouette occupying more than 50% of the thoracic width on PA chest radiographs.",
-    "The cardiac borders appear rounded and enlarged, often reflecting chronic dilation of heart chambers.",
-    "The apex of the heart may be elevated and the cardiophrenic angles can become obscured.",
-    "On lateral chest X-rays, a prominent left ventricular contour is usually visible.",
-    "The mediastinum may appear widened with smooth margins, which is not typical of acute aortic pathology.",
-    "These radiographic features suggest underlying conditions such as chronic heart failure or cardiomyopathy.",
-    "Assessment of cardiomegaly can guide further cardiac evaluation and management.",
-    "It is important to correlate these findings clinically for accurate diagnosis."
+    "Cardiomegaly is characterized by an abnormal enlargement of the heart, usually evident when the cardiac silhouette exceeds 50% of the thoracic width on posteroanterior chest radiographs.",
+    "The condition often reflects chronic volume or pressure overload leading to dilation of cardiac chambers.",
+    "Radiographically, the heart borders appear rounded and enlarged with an elevated cardiac apex.",
+    "The cardiophrenic angles may be obscured, and on lateral views, prominence of the left ventricular contour is noted.",
+    "Mediastinal widening with smooth margins may be present, though not indicative of acute aortic pathology.",
+    "Cardiomegaly commonly results from heart failure, cardiomyopathy, or valvular disease and necessitates further cardiac evaluation and management.",
+    "Clinical correlation including symptoms and echocardiography is essential for diagnosis and management.",
+    "Early detection can improve prognosis by guiding timely interventions."
   ],
   "Consolidation": [
-    "Consolidation is the filling of alveolar airspaces with fluid, pus, blood, or cells, causing homogeneous opacity on chest X-rays.",
-    "It typically presents without volume loss, especially in areas like the right middle lobe.",
-    "Presence of air bronchograms within the dense pulmonary opacity is a hallmark feature.",
-    "Well-defined segmental consolidation usually spares the interlobular septa.",
+    "Consolidation refers to the replacement of alveolar air with fluid, pus, blood, or cells, resulting in homogeneous pulmonary opacity on chest X-rays.",
+    "It typically presents without volume loss and commonly affects lobar segments such as the right middle lobe.",
+    "Presence of air bronchograms within the dense opacity is a characteristic radiographic feature.",
+    "Well-defined segmental consolidations usually spare the interlobular septa.",
     "Localized opacities occur without significant pleural effusion or mediastinal shift.",
-    "Patchy airspace disease may also present with confluent opacities, often in dependent lung regions.",
-    "Consolidation is often seen in infectious processes such as pneumonia.",
-    "Radiographic evaluation assists in differentiating consolidation from other lung pathologies."
+    "Patchy airspace disease may also present with confluent opacities often in dependent lung regions.",
+    "Consolidation is frequently associated with infectious etiologies like bacterial pneumonia.",
+    "Radiographic assessment supports clinical diagnosis and aids in monitoring treatment response."
   ],
   "Edema": [
-    "Pulmonary edema is characterized by fluid accumulation in the lung interstitium and alveoli.",
-    "Chest X-rays reveal bilateral perihilar ground-glass opacities forming a classic bat-wing distribution.",
-    "Kerley B lines indicate thickened interlobular septa due to interstitial fluid.",
-    "Cardiogenic pulmonary edema often shows upper lobe vascular redistribution as blood flow shifts upwards.",
-    "Hazy opacities representing alveolar flooding are typically seen in both lower lobes.",
-    "Diffuse alveolar opacification with rapid onset and central predominance is common.",
-    "These findings usually correlate clinically with heart failure or acute lung injury.",
-    "Timely recognition is crucial for appropriate management of pulmonary edema."
+    "Pulmonary edema is characterized by abnormal accumulation of fluid in the lung interstitium and alveolar spaces.",
+    "Chest X-rays show bilateral perihilar ground-glass opacities creating the classic bat-wing distribution.",
+    "Kerley B lines indicate thickening of interlobular septa due to interstitial fluid.",
+    "Cardiogenic pulmonary edema often shows upper lobe vascular redistribution reflecting elevated pulmonary venous pressure.",
+    "Hazy alveolar opacities are typically noted in both lower lobes with rapid onset.",
+    "Diffuse alveolar flooding leads to decreased lung compliance and impaired gas exchange.",
+    "Clinical correlation with signs of heart failure or acute lung injury is necessary.",
+    "Prompt recognition is vital for appropriate medical management and prevention of respiratory failure."
   ],
   "Pleural Effusion": [
-    "Pleural effusion is the abnormal accumulation of fluid in the pleural space surrounding the lungs.",
-    "Radiographically, it causes blunting of the costophrenic angles and layering opacity on upright chest films.",
-    "A characteristic meniscus-shaped homogeneous density is visible along the lateral chest wall.",
+    "Pleural effusion is the abnormal accumulation of fluid within the pleural space surrounding the lungs.",
+    "Radiographically, it causes blunting of the costophrenic angles and layering opacities on upright chest X-rays.",
+    "A meniscus-shaped homogeneous density along the lateral chest wall is characteristic.",
     "Large effusions may cause mediastinal and tracheal shift away from the affected side.",
-    "In massive effusions, total opacification of the hemithorax can be seen.",
-    "Fluid accumulation can be confirmed using decubitus positioning or ultrasound.",
-    "Effusions can result from various causes including infection, heart failure, or malignancy.",
-    "Accurate identification helps guide diagnostic and therapeutic interventions."
+    "Massive pleural effusions can result in total opacification of the hemithorax.",
+    "Fluid confirmation can be performed using decubitus positioning or thoracic ultrasound.",
+    "Effusions may arise from infections, malignancies, heart failure, or trauma.",
+    "Accurate diagnosis guides therapeutic interventions such as thoracentesis or chest tube placement."
   ],
   "Pneumonia": [
-    "Pneumonia is an infection of the lung parenchyma leading to inflammation and consolidation.",
-    "It commonly appears as lobar consolidation with air bronchograms, often in the lower lobes.",
-    "The opacity may be heterogeneous and accompanied by clinical symptoms such as fever and cough.",
-    "Alveolar infiltrates without clear segmental margins are frequently observed.",
-    "Patchy bilateral opacities with asymmetric distribution can also be present.",
-    "The density increases but without significant volume loss or pleural shift.",
-    "Radiographic findings support clinical suspicion and aid in diagnosis.",
-    "Prompt recognition facilitates timely antibiotic therapy and patient management."
+    "Pneumonia is an infection of the lung parenchyma leading to inflammation and consolidation of alveoli.",
+    "It commonly presents as lobar consolidation with air bronchograms visible on chest radiographs.",
+    "Opacity can be heterogeneous and accompanied by clinical symptoms including fever and productive cough.",
+    "Alveolar infiltrates may lack clear segmental margins and can be patchy or diffuse.",
+    "Bilateral asymmetric opacities can be observed in severe or atypical infections.",
+    "There is usually no significant volume loss or pleural shift associated with pneumonia.",
+    "Radiographic findings support clinical diagnosis and guide antimicrobial therapy.",
+    "Timely detection and treatment reduce morbidity and mortality."
   ],
   "Pneumothorax": [
-    "Pneumothorax is the presence of air in the pleural space causing partial or complete lung collapse.",
-    "Chest X-rays show absence of lung markings peripheral to the visceral pleural line.",
-    "A sharp edge of the collapsed lung may be visible along with a hyperlucent hemithorax.",
-    "In supine patients, the deep sulcus sign indicates anterior air accumulation.",
-    "Air collection does not usually cause mediastinal shift unless tension pneumothorax develops.",
-    "Small apical lucencies without vascular markings may be seen on upright films.",
-    "Clinical correlation is essential as pneumothorax can be life-threatening if untreated.",
-    "Radiographic diagnosis guides urgent management including possible chest tube placement."
+    "Pneumothorax is the presence of air within the pleural space causing partial or complete lung collapse.",
+    "Chest X-rays reveal absence of lung markings peripheral to the visceral pleural line.",
+    "A sharp edge of the collapsed lung with a hyperlucent hemithorax is typical.",
+    "In supine patients, the deep sulcus sign may indicate anterior air accumulation.",
+    "Mediastinal shift is generally absent unless tension pneumothorax develops.",
+    "Small apical lucencies without vascular markings are often visible on upright films.",
+    "Clinical correlation is essential as untreated pneumothorax can be life-threatening.",
+    "Radiographic diagnosis guides urgent management including possible chest tube insertion."
   ]
 }
