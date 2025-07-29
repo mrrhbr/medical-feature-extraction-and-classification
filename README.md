@@ -1,9 +1,18 @@
-# پروژه تشخیص بیماری‌های ریه با مدل ViT و LRFL
+# Multi-Aspect Vision-Language (MAVL) for Medical Diagnosis
 
-## معرفی  
+This project implements a multi-stage framework inspired by the following papers:
 
-هدف این پروژه، آموزش یک مدل یادگیری عمیق بر پایه Vision Transformer (ViT) برای تشخیص چند برچسبی بیماری‌های ریوی از تصاویر Chest X-ray با استفاده از روش Low-Rank Feature Learning (LRFL) است.
+- [**LRF: Towards Low-Rank Feedback for Multi-Label Medical Image Classification**](https://arxiv.org/abs/2404.18933)
+- [**Multi-Aspect Medical Image Classification with Hierarchical Prompting**](https://arxiv.org/abs/2403.07636)
 
-## داده‌ها  
+The goal is to enhance medical image classification using a combination of low-rank feature learning, text-guided supervision, and multi-aspect vision-language fusion.
 
-از دیتاست **CheXpert** استفاده شده است. داده‌ها شامل تصاویر Chest X-ray و برچسب‌های چند برچسبی از بیماری‌های ریه می‌باشند.
+---
+
+## 📁 Project Structure
+
+```bash
+.
+├── MAVL_Phase1_FeatureEmbeding+LRF+baseline.ipynb   # ViT + Low-Rank Feature Learning (LRFL)
+├── MAVL_Phase2_TextEmbedding.ipynb                  # Text embeddings using ClinicalBERT
+├── MultiAspect_VisionLanguage_Model.ipynb           # Vision-Language Fusion and Classification
