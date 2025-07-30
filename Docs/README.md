@@ -85,44 +85,47 @@ text_embeddings = outputs.last_hidden_state.mean(dim=1)  # shape: [num_labels, h
 
 ```
 
-#  Phase 3 - Multi-label Disease Classification 
-Notebook: `MultiAspect_VisionLanguage_Model_finalversion.ipynb`
+## Phase 3 - Multi-label Disease Classification with Contrastive Pretraining  
+**Notebook**: `MultiAspect_VisionLanguage_Model_final_version_full_data_+contrastive.ipynb`
+
+- Uses contrastive pretraining on image–text pairs  
+- Projects image and text embeddings to shared latent space  
+- Trains a multi-label classifier using `BCEWithLogitsLoss` on cosine similarity
+
+### Training  
+- **Optimizer**: Adam (lr=1e-3), **Batch size**: 64, **Epochs**: 100  
+- **Input shapes**:
+  - Image: `[B, 64]` pooled from ViT embeddings  
+  - Text: `[7, 64]` projected from BERT  
+- **Output**: `[B, 7]` similarity matrix (logits)
+
+### Inference  
+- Sigmoid activation applied to similarity logits  
+- Threshold sweeping from 0.1 to 0.9 (step=0.05)  
+- Best threshold selected based on macro F1 score  
+
+### Final Evaluation Results (After Contrastive Training)
+
+| Disease           | Precision | Recall | F1    | Support |
+|-------------------|-----------|--------|-------|---------|
+| Atelectasis       | 0.80      | 0.83   | 0.81  | 80      |
+| Cardiomegaly      | 0.75      | 0.72   | 0.73  | 68      |
+| Consolidation     | 0.70      | 0.88   | 0.78  | 33      |
+| Edema             | 0.63      | 0.56   | 0.59  | 45      |
+| Pleural Effusion  | 0.84      | 0.82   | 0.83  | 67      |
+| Pneumonia         | 0.30      | 0.88   | 0.45  | 8       |
+| Pneumothorax      | 0.10      | 0.25   | 0.14  | 8       |
+
+- **Macro F1**: 0.62  
+- **Micro F1**: 0.68  
+- **Hamming Loss**: 0.1210
+
+### Notes
+- Contrastive pretraining improved generalization on majority classes  
+- Rare class detection (e.g., Pneumothorax) remains challenging  
+- Future work: augment rare class samples, apply focal loss or resampling
 
 
-- Combines low-dim image embeddings (from Phase 1) with text embeddings for 7 diseases  
-- Trains linear projectors on both embeddings  
-- Optimizes BCEWithLogitsLoss on normalized similarity scores
-
-## Training
-- Optimizer: Adam (lr=1e-3), batch size=64, epochs=100  
-- Inputs: img_tensor_pooled [B,64], text_tensor [7,64]  
-- Output: similarity matrix [B,7] between image and text embeddings
-
-## Inference
-- Apply sigmoid on similarity scores  
-- Tune threshold (0.1 to 0.9 step 0.05) for best macro F1
-
-## Results
-
-| Disease          | Precision | Recall | F1    | Support |
-|------------------|-----------|--------|-------|---------|
-| Atelectasis      | 0.77      | 0.78   | 0.77  | 80      |
-| Cardiomegaly     | 0.69      | 0.60   | 0.65  | 68      |
-| Consolidation    | 0.62      | 0.85   | 0.72  | 33      |
-| Edema            | 0.58      | 0.49   | 0.53  | 45      |
-| Pleural Effusion | 0.79      | 0.81   | 0.80  | 67      |
-| Pneumonia        | 0.20      | 0.88   | 0.33  | 8       |
-| Pneumothorax     | 0.03      | 0.12   | 0.05  | 8       |
-
-- Macro F1: 0.55  
-- Micro F1: 0.64  
-- Hamming Loss: 0.1453
----
-## Notes
-- Good performance on common diseases  
-- Poor results on rare classes likely due to class imbalance
-
----
 ## Dataset
 - **Name:** CheXpert (small)  
 - **Source:** [Kaggle - CheXpert-v1.0-small Chest X-rays](https://www.kaggle.com/datasets/ashery/chexpert)
