@@ -128,7 +128,7 @@ loss = (cross_entropy(logits, targets) + cross_entropy(logits.T, targets)) / 2
 
 ---
 
-## 🧮 Multi-label Classification Phase
+##  Multi-label Classification Phase
 - After contrastive alignment, cosine similarities between the image and each disease embedding are interpreted as logits.  
 - A sigmoid function is applied to convert logits into per-label probabilities.  
 - **Loss:** `BCEWithLogitsLoss`  
