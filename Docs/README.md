@@ -82,7 +82,7 @@ with torch.no_grad():
 # Extract embeddings using mean pooling
 text_embeddings = outputs.last_hidden_state.mean(dim=1)  # shape: [num_labels, hidden_dim]
 
-
+```
 
 
 ## Phase 3 – Multi-label Disease Classification with Contrastive Pretraining
