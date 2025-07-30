@@ -83,47 +83,85 @@ with torch.no_grad():
 text_embeddings = outputs.last_hidden_state.mean(dim=1)  # shape: [num_labels, hidden_dim]
 
 
-```
 
-## Phase 3 - Multi-label Disease Classification with Contrastive Pretraining  
+
+## Phase 3 – Multi-label Disease Classification with Contrastive Pretraining
+
 **Notebook**: `MultiAspect_VisionLanguage_Model_final_version_full_data_+contrastive.ipynb`
 
-- Uses contrastive pretraining on image–text pairs  
-- Projects image and text embeddings to shared latent space  
-- Trains a multi-label classifier using `BCEWithLogitsLoss` on cosine similarity
 
-### Training  
-- **Optimizer**: Adam (lr=1e-3), **Batch size**: 64, **Epochs**: 100  
-- **Input shapes**:
-  - Image: `[B, 64]` pooled from ViT embeddings  
-  - Text: `[7, 64]` projected from BERT  
-- **Output**: `[B, 7]` similarity matrix (logits)
 
-### Inference  
-- Sigmoid activation applied to similarity logits  
-- Threshold sweeping from 0.1 to 0.9 (step=0.05)  
-- Best threshold selected based on macro F1 score  
 
-### Final Evaluation Results (After Contrastive Training)
+### Pipeline Summary
 
-| Disease           | Precision | Recall | F1    | Support |
-|-------------------|-----------|--------|-------|---------|
-| Atelectasis       | 0.80      | 0.83   | 0.81  | 80      |
-| Cardiomegaly      | 0.75      | 0.72   | 0.73  | 68      |
-| Consolidation     | 0.70      | 0.88   | 0.78  | 33      |
-| Edema             | 0.63      | 0.56   | 0.59  | 45      |
-| Pleural Effusion  | 0.84      | 0.82   | 0.83  | 67      |
-| Pneumonia         | 0.30      | 0.88   | 0.45  | 8       |
-| Pneumothorax      | 0.10      | 0.25   | 0.14  | 8       |
+1. **Input Embeddings**:
+   - Image embeddings: ViT pooled features → `[B, 64]`
+   - Text embeddings: BERT-based (disease-specific) → `[7, 768]`
+2. **Projection Heads**:
+   - Image: `64 → 128 → 256`
+   - Text: `768 → 256 → 256`
+3. **Contrastive Alignment**:
+   - Contrastive loss applied on positive image–text pairs
+4. **Multi-label Classification**:
+   - Cosine similarity scores → trained with `BCEWithLogitsLoss`
 
-- **Macro F1**: 0.62  
-- **Micro F1**: 0.68  
-- **Hamming Loss**: 0.1210
 
-### Notes
-- Contrastive pretraining improved generalization on majority classes  
-- Rare class detection (e.g., Pneumothorax) remains challenging  
-- Future work: augment rare class samples, apply focal loss or resampling
+
+###  Contrastive Pretraining Details
+
+- **Objective**: Align image embeddings with corresponding disease descriptions
+- **Positive Pair**: `(image, mean of positive label embeddings)`
+- **Loss Function**:
+
+```python
+logits = (img_emb @ txt_emb.T) / temperature
+targets = torch.arange(B).to(device)
+loss = (cross_entropy(logits, targets) + cross_entropy(logits.T, targets)) / 2
+
+```
+
+### Training Configuration
+- **Temperature:** 0.2  
+- **Batch size:** 64  
+- **Epochs:** 30  
+- **Optimizer:** Adam (lr=5e-4)  
+
+---
+
+## 🧮 Multi-label Classification Phase
+- After contrastive alignment, cosine similarities between the image and each disease embedding are interpreted as logits.  
+- A sigmoid function is applied to convert logits into per-label probabilities.  
+- **Loss:** `BCEWithLogitsLoss`  
+- **Threshold Tuning:** Sweep thresholds from 0.1 to 0.9 with a step of 0.05 to maximize macro-F1 score.  
+
+---
+
+##  Evaluation Results (Post-Contrastive)
+
+| Disease          | Precision | Recall | F1   | Support |
+|------------------|-----------|--------|------|---------|
+| Atelectasis      | 0.80      | 0.83   | 0.81 | 80      |
+| Cardiomegaly     | 0.75      | 0.72   | 0.73 | 68      |
+| Consolidation    | 0.70      | 0.88   | 0.78 | 33      |
+| Edema            | 0.63      | 0.56   | 0.59 | 45      |
+| Pleural Effusion | 0.84      | 0.82   | 0.83 | 67      |
+| Pneumonia        | 0.30      | 0.88   | 0.45 | 8       |
+| Pneumothorax     | 0.10      | 0.25   | 0.14 | 8       |
+
+- **Macro F1:** 0.62  
+- **Micro F1:** 0.68  
+- **Hamming Loss:** 0.1210  
+
+---
+
+##  Notes
+-  Contrastive pretraining improved semantic alignment between vision and language.  
+-  Enhanced generalization on frequent classes (e.g., Atelectasis, Pleural Effusion).  
+-  Poor performance on underrepresented diseases (e.g., Pneumothorax).  
+-  Cosine similarity combined with BCE loss works well for multi-label classification.  
+-  Threshold sweeping is critical for calibration.  
+
+---
 
 
 ## Dataset
