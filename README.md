@@ -117,9 +117,16 @@ Notebook: `MultiAspect_VisionLanguage_Model_finalversion.ipynb`
 - Macro F1: 0.55  
 - Micro F1: 0.64  
 - Hamming Loss: 0.1453
-
+---
 ## Notes
 - Good performance on common diseases  
 - Poor results on rare classes likely due to class imbalance
 
+---
+## Dataset
+- **Name:** CheXpert (small)  
+- **Source:** [Kaggle - CheXpert-v1.0-small Chest X-rays](https://www.kaggle.com/datasets/ashery/chexpert)
+- **Size:** ~11 GB  
+- **Type:** Frontal chest X-rays with multi-label annotations  
+- **Subset Used:** ~30% due to compute constraints
 ---
