@@ -1,5 +1,2 @@
-*.pth
-*.pt
-checkpoints/
-
+git rm --cached best_model_LRF_data30%.pth
 
