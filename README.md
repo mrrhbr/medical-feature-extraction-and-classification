@@ -9,7 +9,7 @@ The goal is to enhance medical image classification using a combination of low-r
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```bash
 .
@@ -21,7 +21,7 @@ The goal is to enhance medical image classification using a combination of low-r
 ---
 
 
-## 🚀 Usage
+##  Usage
 
 To run the project, follow the order below:
 
