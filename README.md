@@ -17,7 +17,7 @@ The goal is to enhance medical image classification using a combination of low-r
 ├── MAVL_Phase2_TextEmbedding.ipynb                  # Text embeddings using ClinicalBERT
 ├── MultiAspect_VisionLanguage_Model.ipynb           # Vision-Language Fusion and Classification
 
-```bash
+```
 ---
 
 
