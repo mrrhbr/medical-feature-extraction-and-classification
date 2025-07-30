@@ -82,3 +82,44 @@ with torch.no_grad():
 # Extract embeddings using mean pooling
 text_embeddings = outputs.last_hidden_state.mean(dim=1)  # shape: [num_labels, hidden_dim]
 
+
+```
+
+#  Phase 3 - Multi-label Disease Classification 
+Notebook: `MultiAspect_VisionLanguage_Model_finalversion.ipynb`
+
+
+- Combines low-dim image embeddings (from Phase 1) with text embeddings for 7 diseases  
+- Trains linear projectors on both embeddings  
+- Optimizes BCEWithLogitsLoss on normalized similarity scores
+
+## Training
+- Optimizer: Adam (lr=1e-3), batch size=64, epochs=100  
+- Inputs: img_tensor_pooled [B,64], text_tensor [7,64]  
+- Output: similarity matrix [B,7] between image and text embeddings
+
+## Inference
+- Apply sigmoid on similarity scores  
+- Tune threshold (0.1 to 0.9 step 0.05) for best macro F1
+
+## Results
+
+| Disease          | Precision | Recall | F1    | Support |
+|------------------|-----------|--------|-------|---------|
+| Atelectasis      | 0.77      | 0.78   | 0.77  | 80      |
+| Cardiomegaly     | 0.69      | 0.60   | 0.65  | 68      |
+| Consolidation    | 0.62      | 0.85   | 0.72  | 33      |
+| Edema            | 0.58      | 0.49   | 0.53  | 45      |
+| Pleural Effusion | 0.79      | 0.81   | 0.80  | 67      |
+| Pneumonia        | 0.20      | 0.88   | 0.33  | 8       |
+| Pneumothorax     | 0.03      | 0.12   | 0.05  | 8       |
+
+- Macro F1: 0.55  
+- Micro F1: 0.64  
+- Hamming Loss: 0.1453
+
+## Notes
+- Good performance on common diseases  
+- Poor results on rare classes likely due to class imbalance
+
+---
