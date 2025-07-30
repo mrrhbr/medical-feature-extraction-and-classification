@@ -50,3 +50,33 @@ def lrfl_loss_fn(logits, labels, features, U, V, eta=1e-3):
     bce = nn.BCEWithLogitsLoss()(logits, labels)
     reg = torch.sum((U.T @ features) @ V.T)
     return bce + eta * reg / features.size(0)
+
+### 2. Phase 2 – Text Embedding with ClinicalBERT  
+Notebook: `MAVL_Phase2_TextEmbedding.ipynb`
+
+- Loads pretrained `emilyalsentzer/Bio_ClinicalBERT` via HuggingFace  
+- Encodes label descriptions (e.g., “Pneumothorax”, “Cardiomegaly”) into dense vectors  
+- Aggregates hidden states (mean pooling or `[CLS]`) to produce fixed-size embeddings  
+- Saves text embeddings for use in the fusion/classification stage
+
+
+
+```python
+from transformers import AutoTokenizer, AutoModel
+
+# Load model and tokenizer
+tokenizer = AutoTokenizer.from_pretrained("emilyalsentzer/Bio_ClinicalBERT")
+model = AutoModel.from_pretrained("emilyalsentzer/Bio_ClinicalBERT").to(device)
+
+# Example label list
+label_texts = ["Pneumothorax", "Cardiomegaly", "Effusion", ...]
+
+# Tokenize and encode
+inputs = tokenizer(label_texts, padding=True, truncation=True, return_tensors="pt").to(device)
+
+with torch.no_grad():
+    outputs = model(**inputs)
+
+# Extract embeddings using mean pooling
+text_embeddings = outputs.last_hidden_state.mean(dim=1)  # shape: [num_labels, hidden_dim]
+
