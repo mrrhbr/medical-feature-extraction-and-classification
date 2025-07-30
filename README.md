@@ -50,6 +50,8 @@ def lrfl_loss_fn(logits, labels, features, U, V, eta=1e-3):
     bce = nn.BCEWithLogitsLoss()(logits, labels)
     reg = torch.sum((U.T @ features) @ V.T)
     return bce + eta * reg / features.size(0)
+```
+
 
 ### 2. Phase 2 – Text Embedding with ClinicalBERT  
 Notebook: `MAVL_Phase2_TextEmbedding.ipynb`
